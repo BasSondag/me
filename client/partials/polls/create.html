@@ -1,0 +1,18 @@
+<a href="#/dashboard">Cancel</a> | <a href="#/">Logout</a>
+<br>
+<br>
+<h1>Put the Question and Options here: {{currentUser.name}}</h1>
+
+<form>
+	<label>Question:</label><br> 
+	<textarea ng-model='newQuestion.question' rows="1" cols="40"></textarea><br>
+	<label>Option 1: </label><br> 
+	<input type="text" ng-model='newQuestion.option1'><br>
+	<label>Option 2: </label><br> 
+	<input type="text" ng-model='newQuestion.option2'><br>
+	<label>Option 3: </label><br> 
+	<input type="text" ng-model='newQuestion.option3'><br>
+	<label>Option 4: </label><br> 
+	<input type="text" ng-model='newQuestion.option4'><br>
+	<input type='submit' ng-click="addQuestion(newQuestion)" value = 'Create Poll'>
+</form>

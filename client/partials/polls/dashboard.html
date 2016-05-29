@@ -1,0 +1,17 @@
+<a href="#/create">Create a new Poll</a> | <a href="#/">Logout</a>
+<h1>Welcome Current Polls: {{currentUser.name}}!</h1>
+
+
+    <div id= 'filter'>
+        <input type="text" ng-model="filter_name" placeholder="filter">   {{filter_name}}
+    </div>
+
+    <table>
+        <tr><th>Name</th><th>Survey Question</th><th>Date Posted</th><th>Action</th></tr>
+        <tr ng-repeat="poll in polls | filter: {name:filter_name}"  ng-class-odd="'d1'" ng-class-even="'d2'">
+            <td>{{poll._user.name}}</td>
+            <td><a href="#/polls/{{poll._id}}"> {{poll.question}}</a></td>
+            <td>{{poll.date}}</td>
+            <td><input type = 'submit' value = 'Delete' ng-click= 'removeQuestion()' ng-if='poll.name == currentUser.name'></td>
+        </tr>
+    </table>
